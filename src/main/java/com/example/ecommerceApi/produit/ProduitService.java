@@ -16,4 +16,6 @@ public interface ProduitService {
     Produit findProduitByType(String type);
 
     Page<Produit> getProduitsByPage(int pageNum, int pageSize);
+
+    List<Produit> filterByType(String[] type);
 }

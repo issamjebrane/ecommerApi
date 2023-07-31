@@ -35,4 +35,8 @@ public class ProduitServiceImpl implements ProduitService{
         Pageable pageable = PageRequest.of(pageNum,pageSize);
         return produitRepository.findAll(pageable);
     }
+
+    public List<Produit> filterByType(String[] type) {
+        return produitRepository.findByTypeIn(type);
+    }
 }
