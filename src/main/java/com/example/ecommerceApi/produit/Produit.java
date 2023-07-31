@@ -3,7 +3,7 @@ package com.example.ecommerceApi.produit;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "product")
+@Table(name = "produit")
 public class Produit {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
