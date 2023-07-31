@@ -6,9 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/produit")
+@RequestMapping("/produits")
 public class ProduitController {
 
     @Autowired
@@ -29,6 +30,10 @@ public class ProduitController {
         return produitService.findProduitByType(type);
     }
 
+    @GetMapping("/filter")
+    public List<Produit> filter(@RequestParam("type") String type){
+         return produitService.filterByType(type.split(","));
+    }
     @PostMapping("/save")
     public Produit addProduit(@RequestBody Produit produit){
         return produitService.addProduit(produit);
